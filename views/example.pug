@@ -1,0 +1,116 @@
+doctype html
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-         h1 Sandeep Ganguly
+//-         p Hello from first paragraph.    
+
+//- //NOTE: CREATE ID & CLASS SELECTOR IN PUG
+//- // For className we use .  and for id we use #
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-         h1.mainHeading#mainHeading Ravi Yadav
+//-         p.mainHeading.customStyle from first paragraph.    
+
+
+//- //NOTE: CREATE HTML TAG ATTRIBUTE IN PUG
+//- for anchor tag we use a
+
+//- html
+//-     head
+//-         title First Pug page
+//-     body 
+//-         h1.mainHeading#mainHeading(style="background-color: orange;color:orangered") Ravi Yadav  
+//-         p.mainParagraph.customStyle from first paragraph
+//-         a(href="https://www.google.com") Google  
+
+//- //NOTE: HTML TAGS WITH MULTIPLE LINE OF TEXT IN PUG
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-         h1.mainHeading#mainHeading(style="background-color: orange;color:orangered") Ravi Yadav  
+//-         p.mainParagraph.customStyle from first paragraph
+//-         a(href="https://www.google.com") Google  
+//-         p
+//-         | Probably the most effective way to achieve paragraph unity is to express the central idea of the paragraph
+//-         | has a unifying function. But a thesis statement or topic sentence al
+//-         | In academic writing, the topic sentence nearly always works best at the beginning of a paragraph
+//-         | This topic sentence forecasts the central idea or main point of the paragraph: “politicians” and “journalists” rely on Twitter.
+
+
+//- //NOTE: PASSING VALUES USING JAVASCRIPT OBJECT INTO PUG FILE
+
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-         h1.mainHeading#mainHeading(style="background-color: orange;color:orangered") Ravi Yadav  
+//-         p.mainParagraph.customStyle from first paragraph
+//-         a(href="https://www.google.com") Google  
+//-         p
+//-         | Probably the most effective way to achieve paragraph unity is to express the central idea of the paragraph
+//-         | has a unifying function. But a thesis statement or topic sentence al
+//-         | In academic writing, the topic sentence nearly always works best at the beginning of a paragraph
+//-         | This topic sentence forecasts the central idea or main point of the paragraph: “politicians” and “journalists” rely on Twitter.
+
+        
+//-         h2 Hello #{name}
+//-         a(href=url) Facebook
+//-         ul
+//-            li #{skills[0]}
+//-            li #{skills[1]}
+//-            li #{skills[2]}
+
+
+//- //NOTE: If- Else Condition in PUG
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-         if (data)
+//-             h1 Hello #{data.name}
+//-             h2 Course Name: #{data.tutorial}
+//-             h3 City: #{data.city}
+//-         else
+//-             h1(style="color:red") Javascript Object is Not Set.        
+
+
+//- //NOTE: INCLUDE AND COMPONENTS IN PUG
+
+//- html
+//-     head
+//-         title First Pug Page
+//-     body
+//-     include ./component/header.pug 
+
+//-     h1 Main Content Of Website
+//-     include ./component/footer.pug   
+
+
+//- //NOTE: LINKING CSS FILE IN PUG
+
+//- html
+//-     head
+//-         title First Pug Page
+//-         style
+//-              include ./assets/CSS/custom.css
+//-     body
+//-     include ./component/header.pug 
+
+//-     h1 Main Content Of Website
+//-     include ./component/footer.pug   
+
+
+//NOTE: LINKING JAVASCRIPT FILE IN PUG
+
+html
+    head
+        title First Pug Page
+        script
+              include ./assets/js/custom.js 
+
+    body(onload="message()")          
