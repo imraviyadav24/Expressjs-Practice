@@ -126,11 +126,11 @@
 
 //NOTE: First HTML Page using PUG
 
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-app.set("view engine", "pug");
-app.set("views", "./views");
+// app.set("view engine", "pug");
+// app.set("views", "./views");
 
 // app.get("/", function (req, res) {
 //   res.render("example", {
@@ -143,15 +143,51 @@ app.set("views", "./views");
 
 //NOTE: If-Else Condition in PUG
 
+// app.get("/", function (req, res) {
+//   var person = {
+//     name: "Ravi Yadav",
+//     city: "Kanpur",
+//     tutorial: "ExpressJS",
+//   };
+//   res.render("example", {
+//     data: person,
+//   });
+// });
+
+// app.listen(80);
+
+//NOTE: How To Install Body Parser Using NPM
+//Use npm install --save body-parser
+
+//INSTALL "MULTER" FOR HANDLING FORMS WITH MULTIPLE ATTRIBUTES
+//Use npm install --save multer
+
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+app.set("view engine", "pug");
+app.set("views", "./views");
+
+// JSON parsing
+app.use(bodyParser.json());
+
+//UrlEncoded Data Parsing
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Index page routing
 app.get("/", function (req, res) {
-  var person = {
-    name: "Ravi Yadav",
-    city: "Kanpur",
-    tutorial: "ExpressJS",
-  };
-  res.render("example", {
-    data: person,
-  });
+  res.send("Welcome to index page...");
+});
+
+//Registration page routing
+app.get("/registration", function (req, res) {
+  res.render("registration");
+});
+
+//handleForm page routing
+app.get("/handleForm", function (req, res) {
+  res.send("Handle Form Page....");
 });
 
 app.listen(80);
